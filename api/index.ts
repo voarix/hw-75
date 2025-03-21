@@ -18,6 +18,11 @@ app.post('/encode', async (req, res) => {
         return
     }
 
+    if (password !== PASSWORD) {
+        res.status(400).send({error: "Incorrect password    "});
+        return
+    }
+
     const encodeMessage: string =  await Vigenere.Cipher(PASSWORD).crypt(message);
 
     res.send({message: encodeMessage});
@@ -28,6 +33,11 @@ app.post('/decode', async (req, res) => {
 
     if (!message || !password) {
         res.status(400).send({error: "Message params must be in req url"});
+        return
+    }
+
+    if (password !== PASSWORD) {
+        res.status(400).send({error: "Incorrect password"});
         return
     }
 
