@@ -1,4 +1,4 @@
-import MessageForm from "../../components/MessageForm.tsx";
+import MessageForm from "./components/MessageForm/MessageForm.tsx";
 
 const Message = () => {
 

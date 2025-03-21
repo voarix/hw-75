@@ -19,7 +19,7 @@ app.post("/encode", async (req, res) => {
   }
 
   if (password !== PASSWORD) {
-    res.status(400).send({error: "Incorrect password    "});
+    res.status(400).send({error: "Incorrect password"});
     return
   }
 
